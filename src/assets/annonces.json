@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "titre": "Appartement lumineux à Paris",
+    "ville": "Paris",
+    "prix": 350000,
+    "surface": 55,
+    "datePublication": "2024-06-01",
+    "description": "Bel appartement de 2 pièces proche du métro."
+  },
+  {
+    "id": 2,
+    "titre": "Maison avec jardin à Lyon",
+    "ville": "Lyon",
+    "prix": 480000,
+    "surface": 120,
+    "datePublication": "2024-05-20",
+    "description": "Grande maison familiale avec jardin et garage."
+  },
+  {
+    "id": 3,
+    "titre": "Studio rénové à Marseille",
+    "ville": "Marseille",
+    "prix": 150000,
+    "surface": 30,
+    "datePublication": "2024-06-10",
+    "description": "Studio idéal pour étudiant, proche des commodités."
+  }
+]
