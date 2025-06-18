@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { AnnonceListComponent } from './components/annonce-list/annonce-list.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AnnonceDetailComponent } from './annonce-detail/annonce-detail.component';
 
 export const routes: Routes = [
-  { path: '', component: AnnonceListComponent },
+  { path: '', component: HomePageComponent },
   { path: 'annonce/:id', component: AnnonceDetailComponent },
 ];

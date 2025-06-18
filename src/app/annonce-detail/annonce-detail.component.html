@@ -1,4 +1,6 @@
 <div *ngIf="annonce; else loading">
+<button (click)="goBack()" class="btn-back">← Retour</button>
+
   <h2>{{ annonce.titre }}</h2>
   <p><strong>Ville:</strong> {{ annonce.ville }}</p>
   <p><strong>Prix:</strong> {{ annonce.prix }} €</p>
