@@ -4,11 +4,12 @@ import { AnnonceService, Annonce } from '../../services/annonce.service';
 import { AnnonceCardComponent } from '../annonce-card/annonce-card.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
+import { AnnonceFormComponent } from '../annonce-form/annonce-form.component';  // importe ton formulaire
 
 @Component({
   selector: 'app-annonce-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, AnnonceCardComponent, RouterModule],
+  imports: [CommonModule, FormsModule, AnnonceCardComponent, RouterModule, AnnonceFormComponent],
   templateUrl: './annonce-list.component.html',
   styleUrls: ['./annonce-list.component.scss']
 })
@@ -26,6 +27,10 @@ export class AnnonceListComponent implements OnInit {
   constructor(private annonceService: AnnonceService, private router: Router) {}
 
   ngOnInit(): void {
+    this.loadAnnonces();
+  }
+
+  loadAnnonces() {
     this.annonceService.getAnnonces().subscribe((data: Annonce[]) => {
       this.annonces = data;
     });
@@ -50,11 +55,24 @@ export class AnnonceListComponent implements OnInit {
     return filtered;
   }
 
-  onDeleteAnnonce(id: number) {
-    this.annonces = this.annonces.filter(a => a.id !== id);
-  }
-
+  // méthode appelée quand on clique sur une annonce
   goToAnnonce(id: number) {
     this.router.navigate(['/annonce', id]);
+  }
+
+  // méthode appelée quand on supprime une annonce (via événement delete)
+  onDeleteAnnonce(id: number) {
+    this.annonceService.deleteAnnonce(id).subscribe(() => {
+      // Recharge la liste après suppression
+      this.loadAnnonces();
+    });
+  }
+
+  // méthode appelée quand on ajoute une nouvelle annonce (depuis le formulaire)
+  onAddAnnonce(newAnnonce: Annonce) {
+    this.annonceService.addAnnonce(newAnnonce).subscribe(() => {
+      // Recharge la liste après ajout
+      this.loadAnnonces();
+    });
   }
 }
