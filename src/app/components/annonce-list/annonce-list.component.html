@@ -5,8 +5,26 @@
   <input type="number" placeholder="Prix max" [(ngModel)]="prixMaxFilter">
   <input type="number" placeholder="Surface min" [(ngModel)]="surfaceMinFilter">
   <input type="date" [(ngModel)]="dateMinFilter">
+
+  <!-- Ajout du tri -->
+  <label>
+    Trier par :
+    <select [(ngModel)]="sortBy">
+      <option value="prix">Prix</option>
+      <option value="date">Date</option>
+    </select>
+  </label>
+
+  <label>
+    Ordre :
+    <select [(ngModel)]="sortDirection">
+      <option value="asc">Croissant</option>
+      <option value="desc">Décroissant</option>
+    </select>
+  </label>
 </div>
 
+<!-- Affichage des annonces filtrées et triées -->
 <app-annonce-card
   *ngFor="let annonce of filteredAnnonces()"
   [annonce]="annonce">
