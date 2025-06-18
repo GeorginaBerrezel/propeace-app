@@ -1,0 +1,8 @@
+<div class="annonce-card">
+  <h3>{{ annonce.titre }}</h3>
+  <p>{{ annonce.ville }} - {{ annonce.surface }} m²</p>
+  <p>Prix : {{ annonce.prix | number }} €</p>
+  <p>Date : {{ annonce.datePublication | date }}</p>
+  <p>{{ annonce.description }}</p>
+  <hr />
+</div>

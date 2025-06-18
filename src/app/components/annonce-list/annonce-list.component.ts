@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnnonceService, Annonce } from '../../services/annonce.service';
+import { AnnonceCardComponent } from '../annonce-card/annonce-card.component';
 
 @Component({
   selector: 'app-annonce-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AnnonceCardComponent],
   templateUrl: './annonce-list.component.html',
   styleUrls: ['./annonce-list.component.scss']
 })
