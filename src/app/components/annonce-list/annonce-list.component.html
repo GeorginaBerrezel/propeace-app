@@ -1,3 +1,13 @@
 <h2>Liste des annonces</h2>
 
-<app-annonce-card *ngFor="let annonce of annonces" [annonce]="annonce"></app-annonce-card>
+<div class="filters">
+  <input type="text" placeholder="Ville" [(ngModel)]="villeFilter">
+  <input type="number" placeholder="Prix max" [(ngModel)]="prixMaxFilter">
+  <input type="number" placeholder="Surface min" [(ngModel)]="surfaceMinFilter">
+  <input type="date" [(ngModel)]="dateMinFilter">
+</div>
+
+<app-annonce-card
+  *ngFor="let annonce of filteredAnnonces()"
+  [annonce]="annonce">
+</app-annonce-card>
