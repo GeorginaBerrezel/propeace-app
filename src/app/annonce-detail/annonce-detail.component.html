@@ -1,0 +1,12 @@
+<div *ngIf="annonce; else loading">
+  <h2>{{ annonce.titre }}</h2>
+  <p><strong>Ville:</strong> {{ annonce.ville }}</p>
+  <p><strong>Prix:</strong> {{ annonce.prix }} €</p>
+  <p><strong>Surface:</strong> {{ annonce.surface }} m²</p>
+  <p><strong>Date de publication:</strong> {{ annonce.datePublication }}</p>
+  <p>{{ annonce.description }}</p>
+</div>
+
+<ng-template #loading>
+  <p>Chargement...</p>
+</ng-template>

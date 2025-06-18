@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 export interface Annonce {
   id: number;
@@ -23,5 +23,12 @@ export class AnnonceService {
 
   getAnnonces(): Observable<Annonce[]> {
     return this.http.get<Annonce[]>(this.url);
+  }
+
+  getAnnonceById(id: string): Observable<Annonce | undefined> {
+    const idNum = Number(id);
+    return this.getAnnonces().pipe(
+      map(annonces => annonces.find(a => a.id === idNum))
+    );
   }
 }

@@ -25,7 +25,10 @@
 </div>
 
 <!-- Affichage des annonces filtrées et triées -->
-<app-annonce-card
+<a
   *ngFor="let annonce of filteredAnnonces()"
-  [annonce]="annonce">
-</app-annonce-card>
+  [routerLink]="['/annonce', annonce.id]"
+  style="text-decoration: none; color: inherit; display: block; margin-bottom: 1rem;"
+>
+  <app-annonce-card [annonce]="annonce"></app-annonce-card>
+</a>

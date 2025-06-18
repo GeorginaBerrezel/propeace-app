@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { AnnonceService, Annonce } from '../../services/annonce.service';
 import { AnnonceCardComponent } from '../annonce-card/annonce-card.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-annonce-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, AnnonceCardComponent],
+  imports: [CommonModule, FormsModule, AnnonceCardComponent, RouterModule],
   templateUrl: './annonce-list.component.html',
   styleUrls: ['./annonce-list.component.scss']
 })
