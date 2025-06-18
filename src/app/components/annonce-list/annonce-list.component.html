@@ -1,13 +1,10 @@
-<h2>Ajouter une annonce</h2>
-<app-annonce-form (addAnnonce)="onAddAnnonce($event)"></app-annonce-form>
-
 <h2>Liste des annonces</h2>
 
 <div class="filters">
-  <input type="text" placeholder="Ville" [(ngModel)]="villeFilter">
-  <input type="number" placeholder="Prix max" [(ngModel)]="prixMaxFilter">
-  <input type="number" placeholder="Surface min" [(ngModel)]="surfaceMinFilter">
-  <input type="date" [(ngModel)]="dateMinFilter">
+  <input type="text" placeholder="Ville" [(ngModel)]="villeFilter" />
+  <input type="number" placeholder="Prix max" [(ngModel)]="prixMaxFilter" />
+  <input type="number" placeholder="Surface min" [(ngModel)]="surfaceMinFilter" />
+  <input type="date" [(ngModel)]="dateMinFilter" />
 
   <label>
     Trier par :
@@ -26,11 +23,19 @@
   </label>
 </div>
 
-<div *ngFor="let annonce of filteredAnnonces()" style="margin-bottom: 1rem;">
+<!-- Grille responsive -->
+<div class="annonce-grid">
   <app-annonce-card
+    *ngFor="let annonce of filteredAnnonces()"
     [annonce]="annonce"
     (delete)="onDeleteAnnonce($event)"
     (click)="goToAnnonce(annonce.id)"
-    style="cursor: pointer; display: block;"
+    class="card-wrapper"
   ></app-annonce-card>
 </div>
+
+<h2>Ajouter une annonce</h2>
+<app-annonce-form (addAnnonce)="onAddAnnonce($event)"></app-annonce-form>
+
+
+

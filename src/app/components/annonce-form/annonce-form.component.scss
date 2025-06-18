@@ -1,0 +1,96 @@
+$primary-blue: #4586F7;
+$dark-gray: #53555B;
+$light-beige: #EFE8DC;
+$very-light-blue: #F0F3F9;
+$error-red: #EE5959;
+$success-green: #22AF5C;
+
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap');
+
+.annonce-form {
+  font-family: 'Radio Canada', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  padding: 1.25rem 1.5rem;
+  background-color: $light-beige;
+  border-radius: 12px;
+  border: 1.5px solid lighten($primary-blue, 40%);
+  box-shadow: 0 4px 8px rgba($primary-blue, 0.1);
+  color: $dark-gray;
+}
+
+.annonce-form input,
+.annonce-form textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px 14px;
+  border: 1.5px solid lighten($primary-blue, 40%);
+  border-radius: 10px;
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: $dark-gray;
+  background-color: white;
+}
+
+.annonce-form input::placeholder,
+.annonce-form textarea::placeholder {
+  font-style: italic;
+  color: lighten($dark-gray, 30%);
+}
+
+.annonce-form input:focus,
+.annonce-form textarea:focus {
+  border-color: $primary-blue;
+  box-shadow: 0 0 8px rgba($primary-blue, 0.4);
+  outline: none;
+}
+
+.annonce-form textarea {
+  min-height: 80px;
+}
+
+.annonce-form button {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px 0;
+  border: none;
+  border-radius: 12px;
+  background-color: $primary-blue;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.annonce-form button:hover:not(:disabled),
+.annonce-form button:focus:not(:disabled) {
+  background-color: darken($primary-blue, 10%);
+  box-shadow: 0 6px 12px rgba($primary-blue, 0.5);
+  outline: none;
+}
+
+.annonce-form button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .annonce-form {
+    padding: 1rem 1.25rem;
+  }
+
+  .annonce-form input,
+  .annonce-form textarea {
+    font-size: 1.1rem;
+  }
+
+  .annonce-form button {
+    font-size: 1.2rem;
+  }
+}

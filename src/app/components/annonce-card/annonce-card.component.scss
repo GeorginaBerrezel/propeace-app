@@ -1,0 +1,50 @@
+.annonce-card {
+  background-color: #EFE8DC; /* beige clair */
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 6px rgba(69, 134, 247, 0.2);
+  color: #53555B; /* gris foncé */
+  font-family: 'Radio Canada', sans-serif;
+  user-select: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.annonce-card:hover {
+  box-shadow: 0 4px 12px rgba(69, 134, 247, 0.35);
+}
+
+.annonce-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #4586F7; /* bleu primaire */
+}
+
+.annonce-card p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+}
+
+.annonce-card hr {
+  margin: 1rem 0;
+  border: 0;
+  border-top: 1px solid #F0F3F9;
+}
+
+.annonce-card button {
+  padding: 0.4rem 1rem;
+  background-color: #EE5959; /* rouge erreur */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.annonce-card button:hover {
+  background-color: #d94a4a;
+}
+
+.annonce-card button:focus {
+  outline: 2px solid #EE5959;
+  outline-offset: 2px;
+}

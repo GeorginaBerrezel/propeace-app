@@ -1,4 +1,4 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="annonce-form">
   <input name="titre" [(ngModel)]="newAnnonce.titre" required placeholder="Titre" />
   <input name="ville" [(ngModel)]="newAnnonce.ville" required placeholder="Ville" />
   <input type="number" name="surface" [(ngModel)]="newAnnonce.surface" required placeholder="Surface (m²)" />

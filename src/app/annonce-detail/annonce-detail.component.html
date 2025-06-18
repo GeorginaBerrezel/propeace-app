@@ -1,12 +1,16 @@
-<div *ngIf="annonce; else loading">
-<button (click)="goBack()" class="btn-back">← Retour</button>
+<div *ngIf="annonce; else loading" class="annonce-detail">
+  <button (click)="goBack()" class="btn-back">← Retour</button>
 
   <h2>{{ annonce.titre }}</h2>
-  <p><strong>Ville:</strong> {{ annonce.ville }}</p>
-  <p><strong>Prix:</strong> {{ annonce.prix }} €</p>
-  <p><strong>Surface:</strong> {{ annonce.surface }} m²</p>
-  <p><strong>Date de publication:</strong> {{ annonce.datePublication }}</p>
-  <p>{{ annonce.description }}</p>
+
+  <div class="infos">
+    <p><strong>Ville :</strong> {{ annonce.ville }}</p>
+    <p><strong>Prix :</strong> {{ annonce.prix | number }} €</p>
+    <p><strong>Surface :</strong> {{ annonce.surface }} m²</p>
+    <p><strong>Date de publication :</strong> {{ annonce.datePublication }}</p>
+  </div>
+
+  <p class="description">{{ annonce.description }}</p>
 </div>
 
 <ng-template #loading>
