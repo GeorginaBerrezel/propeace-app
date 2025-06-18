@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AnnonceService, Annonce } from '../../services/annonce.service';
 import { AnnonceCardComponent } from '../annonce-card/annonce-card.component';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-annonce-list',
@@ -24,7 +23,7 @@ export class AnnonceListComponent implements OnInit {
   sortBy: 'prix' | 'date' = 'prix';
   sortDirection: 'asc' | 'desc' = 'asc';
 
-  constructor(private annonceService: AnnonceService) {}
+  constructor(private annonceService: AnnonceService, private router: Router) {}
 
   ngOnInit(): void {
     this.annonceService.getAnnonces().subscribe((data: Annonce[]) => {
@@ -49,5 +48,13 @@ export class AnnonceListComponent implements OnInit {
     });
 
     return filtered;
+  }
+
+  onDeleteAnnonce(id: number) {
+    this.annonces = this.annonces.filter(a => a.id !== id);
+  }
+
+  goToAnnonce(id: number) {
+    this.router.navigate(['/annonce', id]);
   }
 }

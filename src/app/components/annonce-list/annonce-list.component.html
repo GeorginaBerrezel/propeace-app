@@ -6,7 +6,6 @@
   <input type="number" placeholder="Surface min" [(ngModel)]="surfaceMinFilter">
   <input type="date" [(ngModel)]="dateMinFilter">
 
-  <!-- Ajout du tri -->
   <label>
     Trier par :
     <select [(ngModel)]="sortBy">
@@ -24,11 +23,11 @@
   </label>
 </div>
 
-<!-- Affichage des annonces filtrées et triées -->
-<a
-  *ngFor="let annonce of filteredAnnonces()"
-  [routerLink]="['/annonce', annonce.id]"
-  style="text-decoration: none; color: inherit; display: block; margin-bottom: 1rem;"
->
-  <app-annonce-card [annonce]="annonce"></app-annonce-card>
-</a>
+<div *ngFor="let annonce of filteredAnnonces()" style="margin-bottom: 1rem;">
+  <app-annonce-card
+    [annonce]="annonce"
+    (delete)="onDeleteAnnonce($event)"
+    (click)="goToAnnonce(annonce.id)"
+    style="cursor: pointer; display: block;"
+  ></app-annonce-card>
+</div>
