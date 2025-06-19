@@ -1,20 +1,14 @@
-/* ============ Variables ============ */
-$primary-blue: #4586F7;
-$dark-gray: #53555B;
-$light-beige: #EFE8DC;
-$very-light-blue: #F0F3F9;
-
 /* ============ Base Styles ============ */
 body, input, select, button, textarea {
   font-family: 'Radio Canada', sans-serif;
-  color: $dark-gray;
-  background-color: $very-light-blue;
+  color: #53555B; /* dark gray */
+  background-color: #F0F3F9; /* very light blue */
 }
 
 /* ============ Titles ============ */
 h2, h3, label {
   font-family: 'Radio Canada', sans-serif;
-  color: $primary-blue;
+  color: #4586F7; /* primary blue */
   font-weight: 600;
   user-select: none;
 }
@@ -26,7 +20,7 @@ h2 {
 label {
   font-size: 0.85rem;
   margin-left: 4px;
-  color: #53555B;
+  color: #53555B; /* dark gray */
 }
 
 /* ============ Buttons ============ */
@@ -42,13 +36,13 @@ button {
   font-size: 1.1rem;
   font-weight: bold;
   color: white;
-  background-color: $primary-blue;
+  background-color: #4586F7; /* primary blue */
   border: none;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba($primary-blue, 0.3);
+  box-shadow: 0 4px 10px rgba(69, 134, 247, 0.3);
 
   &:hover {
-    background-color: darken($primary-blue, 8%);
+    background-color: #3a6cd6; /* primary blue darkened approx */
     transform: translateY(-2px);
   }
 
@@ -105,11 +99,11 @@ button {
     border: none;
     font-size: 1.5rem;
     font-weight: bold;
-    color: $dark-gray;
+    color: #53555B; /* dark gray */
     line-height: 1;
 
     &:hover {
-      color: darken($primary-blue, 10%);
+      color: #3a6cd6; /* primary blue darkened approx */
     }
   }
 }
@@ -121,9 +115,9 @@ button {
   gap: 0.75rem;
   margin: 1.5rem 0;
   padding: 1rem 1.25rem;
-  background-color: $light-beige;
+  background-color: #EFE8DC; /* light beige */
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba($primary-blue, 0.15);
+  box-shadow: 0 4px 10px rgba(69, 134, 247, 0.15); /* primary blue light */
   font-size: 0.85rem;
   user-select: none;
 }
@@ -139,19 +133,19 @@ button {
   select {
     padding: 10px 14px;
     font-size: 0.9rem;
-    border: 1.5px solid lighten($primary-blue, 40%);
+    border: 1.5px solid #A9C4F9; /* primary blue lightened approx */
     border-radius: 12px;
     background-color: white;
-    color: $dark-gray;
+    color: #53555B; /* dark gray */
 
     &::placeholder {
-      color: lighten($dark-gray, 35%);
+      color: #8A8D94; /* dark gray lightened approx */
       font-style: italic;
     }
 
     &:focus {
-      border-color: $primary-blue;
-      box-shadow: 0 0 0 3px rgba($primary-blue, 0.15);
+      border-color: #4586F7; /* primary blue */
+      box-shadow: 0 0 0 3px rgba(69, 134, 247, 0.15);
       outline: none;
     }
   }
@@ -172,7 +166,7 @@ button {
 
   &:hover,
   &:focus {
-    box-shadow: 0 8px 20px rgba($primary-blue, 0.3);
+    box-shadow: 0 8px 20px rgba(69, 134, 247, 0.3);
     transform: translateY(-4px);
     outline: none;
   }
