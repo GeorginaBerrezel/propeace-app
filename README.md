@@ -1,59 +1,77 @@
-# ImmobilierApp
+# Propeace APP
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Mini-application Angular pour afficher et manipuler une liste d’annonces immobilières.
 
-## Development server
+---
 
-To start a local development server, run:
+## Fonctionnalités développées
 
-```bash
+- Affichage d’une liste d’annonces à partir d’un fichier JSON local (dans `public/assets`).
+- Filtres dynamiques sur la ville, prix max, surface min, et date de publication.
+- Tri croissant/décroissant par prix et date.
+- Vue détail d’une annonce sur une page dédiée via le routing.
+- Composant standalone `AnnonceCardComponent` pour chaque annonce.
+- Bouton de suppression d’annonce (bonus).
+- Composant formulaire pour ajouter une annonce (bonus).
+- Responsive design simple.
+- Tests unitaires sur plusieurs composants (pas encore totalement stabilisés).
+
+---
+
+## Structure du projet
+
+- `src/app/components/` : composants réutilisables (card, form, list).
+- `src/app/annonce-detail/` : composant détail annonce.
+- `src/app/pages/home-page/` : page d’accueil listant les annonces.
+- `src/app/services/annonce.service.ts` : service pour charger les annonces depuis JSON.
+- `public/assets/annonces.json` : fichier JSON des annonces.
+- `src/app/app.routes.ts` : configuration du routing.
+
+---
+
+## Installation et lancement
+
+1. Installer les dépendances (si ce n’est pas déjà fait) :
+
+   ```bash
+   npm install
+---
+
+## Lancer le serveur de développement Angular 
+
 ng serve
-```
+ ---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+ ## Ouvrir l’application dans un navigateur à l’adresse :
 
-## Code scaffolding
+http://localhost:4200/
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## Pour lancer les tests unitaires avec Karma :
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
 ng test
-```
 
-## Running end-to-end tests
+Note : Certains tests échouent encore à cause de l’injection de dépendances non mockées (notamment HttpClient et ActivatedRoute). Je travaille à améliorer cela.
+ ---
 
-For end-to-end (e2e) testing, run:
 
-```bash
-ng e2e
-```
+## Difficultés rencontrées
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Configuration des tests unitaires pour les services Angular nécessitant des providers spécifiques (HttpClientTestingModule).
 
-## Additional Resources
+Gestion du routing dans les tests, particulièrement avec ActivatedRoute.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Chargement du fichier JSON depuis public/assets au lieu de assets/ car cette dernière méthode ne fonctionnait pas correctement.
+
+---
+
+## Remarques techniques
+
+Utilisation de composants standalone (Angular 19).
+
+Injection de services pour récupérer les données.
+
+Utilisation du binding et des événements pour l’interaction utilisateur.
+
+Tri et filtres réalisés via des pipes personnalisés ou des méthodes dans les composants.
