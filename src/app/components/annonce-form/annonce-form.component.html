@@ -1,10 +1,33 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="annonce-form">
-  <input name="titre" [(ngModel)]="newAnnonce.titre" required placeholder="Titre" />
-  <input name="ville" [(ngModel)]="newAnnonce.ville" required placeholder="Ville" />
-  <input type="number" name="surface" [(ngModel)]="newAnnonce.surface" required placeholder="Surface (m²)" />
-  <input type="number" name="prix" [(ngModel)]="newAnnonce.prix" required placeholder="Prix (€)" />
-  <input type="date" name="datePublication" [(ngModel)]="newAnnonce.datePublication" required />
-  <textarea name="description" [(ngModel)]="newAnnonce.description" placeholder="Description"></textarea>
+  <div class="form-group">
+    <label for="titre">Titre</label>
+    <input id="titre" name="titre" [(ngModel)]="newAnnonce.titre" required placeholder="Titre" />
+  </div>
+
+  <div class="form-group">
+    <label for="ville">Ville</label>
+    <input id="ville" name="ville" [(ngModel)]="newAnnonce.ville" required placeholder="Ville" />
+  </div>
+
+  <div class="form-group">
+    <label for="surface">Surface</label>
+    <input id="surface" type="number" name="surface" [(ngModel)]="newAnnonce.surface" required placeholder="Surface (m²)" />
+  </div>
+
+  <div class="form-group">
+    <label for="prix">Prix</label>
+    <input id="prix" type="number" name="prix" [(ngModel)]="newAnnonce.prix" required placeholder="Prix (€)" />
+  </div>
+
+  <div class="form-group">
+    <label for="date">Date de publication</label>
+    <input id="date" type="date" name="datePublication" [(ngModel)]="newAnnonce.datePublication" required />
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" name="description" [(ngModel)]="newAnnonce.description" placeholder="Description"></textarea>
+  </div>
 
   <button type="submit" [disabled]="!f.valid">Ajouter annonce</button>
 </form>

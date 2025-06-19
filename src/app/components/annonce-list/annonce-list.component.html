@@ -1,5 +1,3 @@
-<h2>Liste des annonces</h2>
-
 <div class="filters">
   <div class="input-wrapper">
     <label for="ville">Localisation</label>
@@ -38,6 +36,8 @@
   </div>
 </div>
 
+<h2>Liste des annonces</h2>
+
 <div class="annonce-grid">
   <app-annonce-card
     *ngFor="let annonce of filteredAnnonces()"
@@ -48,5 +48,18 @@
   ></app-annonce-card>
 </div>
 
-<h2>Ajouter une annonce</h2>
-<app-annonce-form (addAnnonce)="onAddAnnonce($event)"></app-annonce-form>
+<button class="add-annonce-btn" (click)="showForm = true">+ Ajouter une annonce</button>
+
+<!-- popup -->
+<div class="modal-backdrop" *ngIf="showForm" (click)="closeModal()"></div>
+<div class="modal" *ngIf="showForm">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3>Nouvelle annonce</h3>
+      <button class="icon-close" (click)="closeModal()">×</button>
+    </div>
+
+    <app-annonce-form (addAnnonce)="onAddAnnonce($event); closeModal()"></app-annonce-form>
+  </div>
+</div>
+

@@ -24,6 +24,12 @@ export class AnnonceListComponent implements OnInit {
   sortBy: 'prix' | 'date' = 'prix';
   sortDirection: 'asc' | 'desc' = 'asc';
 
+  showForm = false;
+
+  closeModal() {
+    this.showForm = false;
+  }
+
   constructor(private annonceService: AnnonceService, private router: Router) {}
 
   ngOnInit(): void {
