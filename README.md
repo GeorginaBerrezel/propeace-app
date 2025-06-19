@@ -53,25 +53,26 @@ http://localhost:4200/
 ng test
 
 Note : Certains tests échouent encore à cause de l’injection de dépendances non mockées (notamment HttpClient et ActivatedRoute). Je travaille à améliorer cela.
- ---
+
+---
 
 
 ## Difficultés rencontrées
 
-Configuration des tests unitaires pour les services Angular nécessitant des providers spécifiques (HttpClientTestingModule).
+- Configuration des tests unitaires pour les services Angular nécessitant des providers spécifiques (HttpClientTestingModule).
 
-Gestion du routing dans les tests, particulièrement avec ActivatedRoute.
+- Gestion du routing dans les tests, particulièrement avec ActivatedRoute.
 
-Chargement du fichier JSON depuis public/assets au lieu de assets/ car cette dernière méthode ne fonctionnait pas correctement.
+- Chargement du fichier JSON depuis public/assets au lieu de assets/ car cette dernière méthode ne fonctionnait pas correctement.
 
 ---
 
 ## Remarques techniques
 
-Utilisation de composants standalone (Angular 19).
+- Utilisation de composants standalone (Angular 19).
 
-Injection de services pour récupérer les données.
+- Injection de services pour récupérer les données.
 
-Utilisation du binding et des événements pour l’interaction utilisateur.
+- Utilisation du binding et des événements pour l’interaction utilisateur.
 
-Tri et filtres réalisés via des pipes personnalisés ou des méthodes dans les composants.
+- Tri et filtres réalisés via des pipes personnalisés ou des méthodes dans les composants.
