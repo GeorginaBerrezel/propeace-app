@@ -4,7 +4,7 @@ import { AnnonceService, Annonce } from '../../services/annonce.service';
 import { AnnonceCardComponent } from '../annonce-card/annonce-card.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
-import { AnnonceFormComponent } from '../annonce-form/annonce-form.component';  // importe ton formulaire
+import { AnnonceFormComponent } from '../annonce-form/annonce-form.component';
 
 @Component({
   selector: 'app-annonce-list',

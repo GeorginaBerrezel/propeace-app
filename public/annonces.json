@@ -6,7 +6,8 @@
     "prix": 350000,
     "surface": 55,
     "datePublication": "2024-06-01",
-    "description": "Bel appartement de 2 pièces proche du métro."
+    "description": "Bel appartement de 2 pièces proche du métro.",
+    "imageUrl": "assets/images/paris.jpg"
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "prix": 480000,
     "surface": 120,
     "datePublication": "2024-05-20",
-    "description": "Grande maison familiale avec jardin et garage."
+    "description": "Grande maison familiale avec jardin et garage.",
+    "imageUrl": "assets/images/lyon.jpg"
   },
   {
     "id": 3,
@@ -24,6 +26,7 @@
     "prix": 150000,
     "surface": 30,
     "datePublication": "2024-06-10",
-    "description": "Studio idéal pour étudiant, proche des commodités."
+    "description": "Studio idéal pour étudiant, proche des commodités.",
+    "imageUrl": "assets/images/marseille.jpg"
   }
 ]

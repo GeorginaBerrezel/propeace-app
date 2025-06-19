@@ -16,7 +16,7 @@ export class AnnonceFormComponent {
   newAnnonce: Partial<Annonce> = {
     titre: '',
     ville: '',
-    surface: undefined,  // undefined au lieu de null
+    surface: undefined,
     prix: undefined,
     description: '',
     datePublication: ''

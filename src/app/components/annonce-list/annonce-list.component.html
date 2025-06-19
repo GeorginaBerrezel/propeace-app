@@ -1,29 +1,43 @@
 <h2>Liste des annonces</h2>
 
 <div class="filters">
-  <input type="text" placeholder="Ville" [(ngModel)]="villeFilter" />
-  <input type="number" placeholder="Prix max" [(ngModel)]="prixMaxFilter" />
-  <input type="number" placeholder="Surface min" [(ngModel)]="surfaceMinFilter" />
-  <input type="date" [(ngModel)]="dateMinFilter" />
+  <div class="input-wrapper">
+    <label for="ville">Localisation</label>
+    <input id="ville" type="text" placeholder="Quartier, Ville, Code Postal..." [(ngModel)]="villeFilter" />
+  </div>
 
-  <label>
-    Trier par :
-    <select [(ngModel)]="sortBy">
+  <div class="input-wrapper">
+    <label for="prix">Prix max</label>
+    <input id="prix" type="number" placeholder="000000" [(ngModel)]="prixMaxFilter" />
+  </div>
+
+  <div class="input-wrapper">
+    <label for="surface">Surface min</label>
+    <input id="surface" type="number" placeholder="Surface minimum" [(ngModel)]="surfaceMinFilter" />
+  </div>
+
+  <div class="input-wrapper">
+    <label for="date">Date min</label>
+    <input id="date" type="date" [(ngModel)]="dateMinFilter" />
+  </div>
+
+  <div class="input-wrapper">
+    <label for="sortBy">Trier par</label>
+    <select id="sortBy" [(ngModel)]="sortBy">
       <option value="prix">Prix</option>
       <option value="date">Date</option>
     </select>
-  </label>
+  </div>
 
-  <label>
-    Ordre :
-    <select [(ngModel)]="sortDirection">
+  <div class="input-wrapper">
+    <label for="sortDirection">Ordre</label>
+    <select id="sortDirection" [(ngModel)]="sortDirection">
       <option value="asc">Croissant</option>
       <option value="desc">Décroissant</option>
     </select>
-  </label>
+  </div>
 </div>
 
-<!-- Grille responsive -->
 <div class="annonce-grid">
   <app-annonce-card
     *ngFor="let annonce of filteredAnnonces()"
@@ -36,6 +50,3 @@
 
 <h2>Ajouter une annonce</h2>
 <app-annonce-form (addAnnonce)="onAddAnnonce($event)"></app-annonce-form>
-
-
-
