@@ -17,8 +17,7 @@ export interface Annonce {
 })
 export class AnnonceService {
 
-  private url = '/annonces.json';
-
+  private url = 'assets/data/annonces.json';
   private annonces: Annonce[] = [];
   private annoncesSubject = new BehaviorSubject<Annonce[]>([]);
 

@@ -4,5 +4,5 @@ import { AnnonceDetailComponent } from './annonce-detail/annonce-detail.componen
 
 export const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'annonce/:id', component: AnnonceDetailComponent },
+  { path: 'annonce/:id', component: AnnonceDetailComponent }
 ];
